@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main-container--has-line {
+  @apply relative;
+}
+
+.main-container--has-line:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 1px;
+  background: #000000;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+[type="text"],
+[type="email"],
+[type="url"],
+[type="password"],
+[type="number"],
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="week"],
+[multiple],
+textarea,
+select {
+  border-radius: 0;
+  border-width: 0 0 2px 0;
+  @apply px-0;
+}
+
+[type="text"]:focus,
+[type="email"]:focus,
+[type="url"]:focus,
+[type="password"]:focus,
+[type="number"]:focus,
+[type="date"]:focus,
+[type="datetime-local"]:focus,
+[type="month"]:focus,
+[type="search"]:focus,
+[type="tel"]:focus,
+[type="time"]:focus,
+[type="week"]:focus,
+[multiple]:focus,
+textarea:focus,
+select:focus {
+  box-shadow: none;
+}
+
+a,
+button {
+  @apply transition-all ease-in-out duration-300;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+}
+
+.team--image {
+  clip-path: url(#svg_team);
+  -webkit-clip-path: url(#svg_team);
+}
+
+.has--line__middle>* {
+  z-index: 10;
+}
+
+.has--line__middle::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) translateX(-4rem);
+}
+
+@media screen and (max-width: 782px) {
+  .has--line__middle::after {
+    transform: translateY(-50%) translateX(-1.5rem);
+  }
+}
